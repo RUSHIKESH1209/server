@@ -1,0 +1,72 @@
+{
+  "info": {
+    "name": "School API",
+    "description": "Simple School Management API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add School",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status is 201 or Error\", function () {",
+              "    pm.expect(pm.response.code).to.be.oneOf([201, 400, 500]);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Green Valley School\",\n  \"address\": \"123 Maple Street, Bhopal\",\n  \"latitude\": 23.254,\n  \"longitude\": 77.423\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/addSchool",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["addSchool"]
+        }
+      }
+    },
+    {
+      "name": "List Schools",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/listSchools?lat=23.25&lng=77.42",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["listSchools"],
+          "query": [
+            { "key": "lat", "value": "23.25" },
+            { "key": "lng", "value": "77.42" }
+          ]
+        }
+      }
+    }
+  ]
+}
