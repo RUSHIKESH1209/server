@@ -33,7 +33,7 @@
           "raw": "{\n  \"name\": \"Green Valley School\",\n  \"address\": \"123 Maple Street, Bhopal\",\n  \"latitude\": 23.254,\n  \"longitude\": 77.423\n}"
         },
         "url": {
-          "raw": "http://localhost:3000/api/addSchool",
+          "raw": "https://server-eosin-seven.vercel.app/api/addSchool",
           "protocol": "http",
           "host": [
             "localhost"
@@ -63,7 +63,7 @@
       "request": {
         "method": "GET",
         "url": {
-          "raw": "http://localhost:3000/api/listSchools?lat=23.25&lng=77.42",
+          "raw": "https://server-eosin-seven.vercel.app/api/listSchools?lat=23.25&lng=77.42",
           "protocol": "http",
           "host": [
             "localhost"
