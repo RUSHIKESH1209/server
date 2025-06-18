@@ -9,11 +9,17 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors(
-  {origin: "*"}
+  { origin: "*" }
 ));
 app.use(express.json());
 
 app.use("/api", schoolRouter);
+
+app.get('/ping', (req, res) => {
+  console.log("pong");
+  res.send("pong");
+});
+
 
 // connect to MongoDB then start server
 connectDB().then(() => {
