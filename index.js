@@ -6,11 +6,8 @@ import schoolRouter from "./schoolRoute.js";
 
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-app.use(cors(
-  { origin: "*" }
-));
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 app.use("/api", schoolRouter);
@@ -20,14 +17,7 @@ app.get('/ping', (req, res) => {
   res.send("pong");
 });
 
-
-// connect to MongoDB then start server
-
-connectDB().then(() => {
-  app.listen(PORT, () => {
-    console.log(`✅ Server running on http://localhost:${PORT}`);
-    
-  });
-});
+// Connect DB (optional — Vercel cold starts may require moving this inside the handler)
+connectDB();
 
 export default app;
