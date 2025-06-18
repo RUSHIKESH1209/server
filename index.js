@@ -22,8 +22,12 @@ app.get('/ping', (req, res) => {
 
 
 // connect to MongoDB then start server
+
 connectDB().then(() => {
   app.listen(PORT, () => {
     console.log(`✅ Server running on http://localhost:${PORT}`);
+    
   });
 });
+
+export default app;
