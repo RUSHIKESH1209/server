@@ -23,18 +23,25 @@
       "request": {
         "method": "POST",
         "header": [
-          { "key": "Content-Type", "value": "application/json" }
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\n  \"name\": \"Green Valley School\",\n  \"address\": \"123 Maple Street, Bhopal\",\n  \"latitude\": 23.254,\n  \"longitude\": 77.423\n}"
         },
         "url": {
-          "raw": "http://localhost:3000/addSchool",
+          "raw": "http://localhost:3000/api/addSchool",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "3000",
-          "path": ["addSchool"]
+          "path": [
+            "addSchool"
+          ]
         }
       }
     },
@@ -56,14 +63,24 @@
       "request": {
         "method": "GET",
         "url": {
-          "raw": "http://localhost:3000/listSchools?lat=23.25&lng=77.42",
+          "raw": "http://localhost:3000/api/listSchools?lat=23.25&lng=77.42",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "3000",
-          "path": ["listSchools"],
+          "path": [
+            "listSchools"
+          ],
           "query": [
-            { "key": "lat", "value": "23.25" },
-            { "key": "lng", "value": "77.42" }
+            {
+              "key": "lat",
+              "value": "23.25"
+            },
+            {
+              "key": "lng",
+              "value": "77.42"
+            }
           ]
         }
       }
