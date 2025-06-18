@@ -1,4 +1,3 @@
-// schoolController.js
 import School from "./schoolModel.js";
 
 function getDistance(lat1, lon1, lat2, lon2) {
@@ -36,10 +35,10 @@ export const addSchool = async (req, res) => {
 
 export const listSchools = async (req, res) => {
     try {
-        const { lat, lng } = req.query; // Change to 'lat' and 'lng'
+        const { lat, lng } = req.query; 
 
-        const userLat = parseFloat(lat); // Use 'lat'
-        const userLon = parseFloat(lng); // Use 'lng'
+        const userLat = parseFloat(lat); 
+        const userLon = parseFloat(lng); 
 
         if (isNaN(userLat) || isNaN(userLon)) {
             return res.status(400).json({ message: "Invalid latitude or longitude" });

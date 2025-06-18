@@ -12,12 +12,8 @@ app.use(express.json());
 
 app.use("/api", schoolRouter);
 
-app.get('/ping', (req, res) => {
-  console.log("pong");
-  res.send("pong");
-});
 
-// Connect DB (optional — Vercel cold starts may require moving this inside the handler)
+
 connectDB();
 
 export default app;
